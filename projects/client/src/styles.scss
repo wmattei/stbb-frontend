@@ -1,0 +1,29 @@
+@import "../../commons/styles.scss";
+
+.rounded-field {
+  &.mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 60px !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+  }
+
+  &.mat-form-field-appearance-outline .mat-form-field-outline-start {
+    display: none !important;
+  }
+
+  &.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #0277bd;
+  }
+}
+
+.mat-form-field-appearance-outline .mat-input-element {
+  margin-left: 10px !important;
+}
+
+.rounded-btn {
+  border-radius: 60px !important;
+}
+
+.tc-primary-dark {
+  color: #0277bd;
+}

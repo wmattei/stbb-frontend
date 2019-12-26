@@ -1,0 +1,21 @@
+.profile-section {
+  background-color: rgba(238, 238, 238, 0.35);
+}
+
+mat-card {
+  padding: 0px !important;
+}
+
+.header {
+  background: linear-gradient(
+    116.86deg,
+    #0d5f8f 42.32%,
+    #0c878e 79.36%,
+    #00bbc7 113.36%
+  );
+}
+
+.selected {
+  border: #35c191 solid 2px;
+  border-radius: 5px;
+}

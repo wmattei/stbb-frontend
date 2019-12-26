@@ -1,0 +1,23 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+		"resolveJsonModule": true,
+    "target": "esnext",
+    "paths": {
+      "@env/*": ["projects/admin/src/environments/*"],
+      "@fuse/*": ["src/@fuse/*"],
+      "@common*": ["projects/common/src/app*"]
+    },
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"]
+  }
+}

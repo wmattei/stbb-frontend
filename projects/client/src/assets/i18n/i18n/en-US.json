@@ -1,0 +1,173 @@
+{
+  "COMMONS": {
+    "FORM": {
+      "LABELS": {
+        "CANCEL": "Cancel",
+        "SAVE": "SAVE",
+        "SEND": "Send"
+      },
+      "VALIDATORS": {
+        "EMAIL": "Incorrect email",
+        "REQUIRED": "Required field"
+      }
+    },
+    "LIST": {
+      "DE": "of",
+      "ITEN_PER_PAGE": "Items per page"
+    },
+    "LOADING": "Loading"
+  },
+  "MODULES": {
+    "NOTIFICATION": {
+      "LABELS": {
+        "MARK_AS_RED": "Mark all as read",
+        "NOTIFICATION": "Notifications",
+        "NO_NEW": "No new notification"
+      }
+    },
+    "PROFILE": {
+      "FORM": {
+        "LABELS": {
+          "ALTERAR_SENHA": "Change password",
+          "IDIOMA": "Language"
+        },
+        "PLACEHOLDERS": {
+          "CONFIRME_SENHA": "Confirm the Password",
+          "EMAIL": "E-mail",
+          "NOME": "Name",
+          "PASSWORD": "Password"
+        }
+      }
+    },
+    "USERS": {
+      "FORM": {
+        "HINT": {
+          "PASSWORD_6": "Password must contain at least 6 digits"
+        },
+        "LABELS": {
+          "CADASTRO": "Register",
+          "EDIT": "Edit user",
+          "FEM": "Female",
+          "GENERAL_INFO": "General information",
+          "LOCALIZACAO": "Location",
+          "MASC": "Male",
+          "NEW": "New user",
+          "REQUIRED": "Required fields",
+          "SENHA_PERMISSAO": "Password an permission"
+        },
+        "PLACEHOLDERS": {
+          "BAIRRO": "Neighborhood/District",
+          "BIRTHDAY": "Date of Birth",
+          "CELULAR": "Cell phone",
+          "CEP": "Zip code",
+          "CIDADE": "City",
+          "COMPLEMENTO": "Complement",
+          "EMAIL": "E-mail",
+          "LOGRADOURO": "Street",
+          "NOME": "First name",
+          "NUMERO": "Number",
+          "OBS": "Comments",
+          "PASSWORD": "Password",
+          "PASSWORD_CONFIRMATION": "Confirm password",
+          "PERMISSAO": "Permission",
+          "SEX": "Sex",
+          "SOBRENOME": "Last name",
+          "TELEFONE": "Phone",
+          "VIEW_NAME": "Display name"
+        },
+        "TOOLTIP": {
+          "DELETE": "Delete user"
+        }
+      },
+      "LABELS": {
+        "USERS": "Users"
+      },
+      "TABLE": {
+        "AGENTE": "Agent",
+        "ATUALIZADO": "Updated",
+        "CREATED": "Created",
+        "DATA": "Date",
+        "ID": "ID",
+        "PERMISSAO": "Permission",
+        "USER": "User"
+      },
+      "TOOLTIPS": {
+        "NOVO": "New user"
+      }
+    }
+  },
+  "NAVIGATION": {
+    "LABELS": {
+      "ADMINISTRATIVO": "Administrative",
+      "AGENTE": "Agent",
+      "AGENTES": "Agents",
+      "CLIENTES": "Customers",
+      "CONCILIACAO": "Conciliation",
+      "CONFIGURACOES": "Settings",
+      "DASHBOARD": "Dashboard",
+      "EXTRATOS": "Extracts",
+      "HOME": "Home",
+      "MEU_PERFIL": "My Profile",
+      "NEWS": "News",
+      "NOVO_SAQUE": "New Cash Out",
+      "ORDENS": "Orders",
+      "SAIR": "Logout",
+      "SUPORTE": "Support",
+      "USERS": "Users",
+      "USUARIOS": "Users",
+      "POSTS": "Posts"
+    }
+  },
+  "RAPI": {
+    "PIECE": {
+      "AUTH": {
+        "LABELS": {
+          "BACK_TO_LOGIN": "Back to login page",
+          "CREATE_ACCOUNT": "Create an account",
+          "DONT_ACCOUNT": "Do not have an account",
+          "DO_LOGIN": "Sign in",
+          "DO_LOGIN_TO_CONTINUE": "Log in to continue to dashboard",
+          "FORGOT_PASSWORD": "Forgot my password",
+          "HAVE_ACCOUNT": "Already have an account",
+          "LOGIN": "Login",
+          "LOGING_OUT": "Loging out",
+          "NEW_PASSWORD": "Create new password",
+          "REGISTER": "Register",
+          "REMEMBER": "Remember",
+          "RESTORE_PASSWORD": "Restore password",
+          "SUBSCRIBE": "Sign up",
+          "WELCOME": "Welcome",
+          "WRITE_EMAIL": "Enter your email to reset your password"
+        },
+        "PLACEHOLDERS": {
+          "EMAIL": "E-mail",
+          "PASSWORD": "Password",
+          "PASSWORD_CONFIRMATION": "Confirm the Password",
+          "USER": "User"
+        }
+      },
+      "CITY": {
+        "CITY": "City",
+        "CREATE": "Register a new city",
+        "EMPTY": "We did not find any city for your search",
+        "FORM": {
+          "FOUNDED_CITIES": "Cities found",
+          "NEW_CITY": "Register a new city",
+          "NOT_FOUND": "We did not find any cities for your search",
+          "SEARCH": "Search city",
+          "SEARCH_BUTTON": "Search",
+          "SELECT": "Select"
+        },
+        "SEARCH": "Search City"
+      }
+    },
+    "W3": {
+      "DELETE_DIALOG": {
+        "CANCEL": "Cancel",
+        "CONFIRM": "Confirm",
+        "SUBTITLE": "Do you want to delete the item",
+        "TITLE": "Delete item"
+      }
+    }
+  }
+}

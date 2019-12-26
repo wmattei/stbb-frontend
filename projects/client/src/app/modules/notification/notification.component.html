@@ -1,0 +1,17 @@
+<div
+  matRipple
+  [ngClass]="{ 'not-readed': !notification?.readed_at }"
+  *ngFor="let notification of notifications$ | async"
+>
+  <div fxLayout="column" class="p-16">
+    <b>{{ notification?.title }}</b>
+    <span>{{ notification?.message }}</span>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+
+<div *ngIf="(notifications$ | async)?.length == 0" class="m-16">
+  <piece-not-found-loading
+    [isLoading]="isLoading$ | async"
+  ></piece-not-found-loading>
+</div>

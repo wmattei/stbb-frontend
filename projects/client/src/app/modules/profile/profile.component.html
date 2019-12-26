@@ -1,0 +1,150 @@
+<div
+  fxLayout="column"
+  class=" header"
+  fxLayoutAlign="center center"
+  fxFlexAlign="center"
+>
+  <div fxLayout="row" class="mt-8 mb-8" fxFlexFill fxLayoutAlign="start center">
+    <button mat-icon-button (click)="openDrawer()">
+      <mat-icon class="tc-white">menu</mat-icon>
+    </button>
+    <div fxFlex="75" fxLayoutAlign="center center">
+      <span class="tc-white bold-600 font-18">{{ "" | translate }}</span>
+    </div>
+  </div>
+  <div fxLayout="row" class="m-40" fxLayoutAlign="center center">
+    <div>
+      <piece-profile-avatar
+        [allowChange]="true"
+        [user]="user$ | async"
+      ></piece-profile-avatar>
+    </div>
+    <div fxLayout="column" class="ml-8">
+      <b class="tc-white font-14 uppercase mr-8">{{
+        (user$ | async)?.name || ("COMMONS.LOADING" | translate) + "..."
+      }}</b>
+      <span class="tc-white font-12">{{ (user$ | async)?.email }}</span>
+    </div>
+  </div>
+</div>
+<div class="bgc-white">
+  <div fxLayout="column" fxFlex>
+    <div class="p-24">
+      <div
+        fxLayout="row"
+        class="mt-8 mb-8"
+        fxLayoutAlign="space-between center"
+      >
+        <span>{{ "MODULES.PROFILE.FORM.LABELS.IDIOMA" | translate }}</span>
+        <div>
+          <img
+            (click)="userPreferences.meta_value.language = 'en-US'"
+            class="mr-8 pointer"
+            [ngClass]="{
+              selected: userPreferences?.meta_value?.language == 'en-US'
+            }"
+            src="assets/images/united-states.png"
+          />
+          <img
+            (click)="userPreferences.meta_value.language = 'pt-BR'"
+            class="pointer"
+            [ngClass]="{
+              selected: userPreferences?.meta_value?.language == 'pt-BR'
+            }"
+            src="assets/images/brazil.png"
+          />
+        </div>
+      </div>
+      <div class="mt-16">
+        <form novalidate [formGroup]="form" (submit)="save()" fxFlex>
+          <div fxLayout="column" fxLayout.lg="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <i class="material-icons-outlined tc-paragraph-light" matPrefix
+                >person</i
+              >
+              <input
+                matInput
+                required
+                [placeholder]="
+                  'MODULES.PROFILE.FORM.PLACEHOLDERS.NOME' | translate
+                "
+                formControlName="first_name"
+              />
+              <mat-error>{{
+                "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="column" fxLayout.lg="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <i class="material-icons-outlined tc-paragraph-light" matPrefix
+                >email</i
+              >
+              <input
+                matInput
+                required
+                placeholder="E-mail"
+                formControlName="email"
+              />
+              <mat-error>{{
+                "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
+              }}</mat-error>
+              <mat-error *ngIf="!form.get('email').hasError('required')">{{
+                "COMMONS.FORM.VALIDATORS.EMAIL" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+          <span>{{
+            "MODULES.PROFILE.FORM.LABELS.ALTERAR_SENHA" | translate
+          }}</span>
+
+          <div fxLayout="column" fxLayout.lg="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <i class="material-icons-outlined tc-paragraph-light" matPrefix
+                >lock_open</i
+              >
+              <input
+                matInput
+                required
+                [placeholder]="
+                  'MODULES.PROFILE.FORM.PLACEHOLDERS.PASSWORD' | translate
+                "
+                type="password"
+                formControlName="password"
+              />
+              <mat-error>{{
+                "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column" fxLayout.lg="row">
+            <mat-form-field appearance="outline" fxFlex>
+              <i class="material-icons-outlined tc-paragraph-light" matPrefix
+                >lock_open</i
+              >
+              <input
+                matInput
+                required
+                type="password"
+                [placeholder]="
+                  'MODULES.PROFILE.FORM.PLACEHOLDERS.CONFIRME_SENHA' | translate
+                "
+                formControlName="password_confirmation"
+              />
+              <mat-error>{{
+                "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
+              }}</mat-error>
+            </mat-form-field>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="p-32">
+  <button (click)="save()" mat-flat-button color="accent" fxFlex>
+    <b class="tc-white">{{ "COMMONS.FORM.LABELS.SAVE" | translate }}</b>
+  </button>
+</div>

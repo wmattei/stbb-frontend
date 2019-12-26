@@ -1,0 +1,119 @@
+<mat-drawer-container class="sidenav-container scrollable">
+  <mat-drawer #drawer class="sidenav scrollable" color="primary">
+    <div class="header" fxLayout="space-between center">
+      <div fxLayout="column" fxFlexFill class="p-16">
+        <div
+          fxLayout="row"
+          fxLayoutAlign="space-between center"
+          fxFlex
+          class="mb-20"
+        >
+          <div fxFlex fxLayout="row" fxLayoutAlign="start center">
+            <div>
+              <piece-profile-avatar
+                [user]="user$ | async"
+              ></piece-profile-avatar>
+            </div>
+            <div fxLayout="column" class="ml-8">
+              <span class="tc-white font-12 uppercase">{{
+                (user$ | async)?.roles | role
+              }}</span>
+              <div fxLayout="row">
+                <b class="tc-white font-14 uppercase mr-8">{{
+                  (user$ | async)?.name ||
+                    ("COMMONS.LOADING" | translate) + "..."
+                }}</b>
+                <i
+                  (click)="drawer?.close()"
+                  routerLink="meu-perfil"
+                  class="material-icons-outlined tc-white font-14"
+                  >edit</i
+                >
+              </div>
+            </div>
+          </div>
+          <button mat-icon-button (click)="drawer?.close()">
+            <mat-icon class="tc-white">close</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <mat-nav-list style="width: 100%" class="list">
+      <div
+        matRipple
+        (click)="drawer?.close()"
+        *ngFor="let item of (navigationOptions$ | async)?.sidenav?.menuItens"
+      >
+        <div *ngIf="item?.type == 'label'" class=" p-16">
+          <span class="tc-paragraph">{{ item?.label }}</span>
+        </div>
+        <mat-divider *ngIf="item?.type == 'divider'"></mat-divider>
+        <a
+          *ngIf="item?.type === 'button'"
+          [routerLink]="item?.link"
+          [style.overflow]="'hidden'"
+          (click)="!item?.link ? (item.open = !item.open) : {}"
+        >
+          <div fxLayout="row" class="p-12">
+            <mat-icon class=" mr-16" [style.color]="item?.iconColor">{{
+              item?.icon
+            }}</mat-icon>
+            <span class="font-14">{{ item?.label }}</span>
+            <span fxFlex></span>
+            <mat-icon
+              *ngIf="item?.subItens"
+              [@indicatorRotate]="getExpandedState(item)"
+              class="no-select"
+              >keyboard_arrow_down</mat-icon
+            >
+          </div>
+          <div
+            [style.overflow]="'hidden'"
+            [@bodyExpansion]="getExpandedState(item)"
+          >
+            <mat-list-item
+              *ngFor="let menuItem of item.subItens"
+              routerLink="{{ menuItem?.routerlink }}"
+            >
+              <mat-icon class="tc-white" mat-list-icon>{{
+                menuItem?.icon
+              }}</mat-icon>
+              <span class="tc-white">{{ menuItem?.label }}</span>
+            </mat-list-item>
+          </div>
+        </a>
+      </div>
+      <span class="label">{{ version }}</span>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-toolbar *ngIf="(navigationOptions$ | async)?.toolbar?.showToolbar">
+      <button mat-icon-button (click)="drawer?.open()">
+        <mat-icon [style.color]="'white'" class="tc-paragraph">menu</mat-icon>
+      </button>
+      <b [style.color]="'white'">{{ title }}</b>
+      <div fxFlex></div>
+      <button
+        mat-icon-button
+        (click)="drawer?.close()"
+        routerLink="/notificacoes"
+      >
+        <mat-icon
+          class="tc-white"
+          matBadgeColor="accent"
+          [matBadge]="
+            (notificationsCount$ | async) > 0
+              ? (notificationsCount$ | async)
+              : null
+          "
+          >notifications_none</mat-icon
+        >
+      </button>
+    </mat-toolbar>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="footer"></div>
+  </mat-drawer-content>
+</mat-drawer-container>

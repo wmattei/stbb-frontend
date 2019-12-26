@@ -1,0 +1,173 @@
+{
+  "COMMONS": {
+    "FORM": {
+      "LABELS": {
+        "CANCEL": "Cancelar",
+        "SAVE": "Salvar",
+        "SEND": "Enviar"
+      },
+      "VALIDATORS": {
+        "EMAIL": "E-mail inválido",
+        "REQUIRED": "Campo obrigatório"
+      }
+    },
+    "LIST": {
+      "DE": "De",
+      "ITEN_PER_PAGE": "Itens por página"
+    },
+    "LOADING": "Carregando"
+  },
+  "MODULES": {
+    "NOTIFICATION": {
+      "LABELS": {
+        "MARK_AS_RED": "Marcar todas como lida",
+        "NOTIFICATION": "Notificações",
+        "NO_NEW": "Nenhuma nova notificação"
+      }
+    },
+    "PROFILE": {
+      "FORM": {
+        "LABELS": {
+          "ALTERAR_SENHA": "Alterar Senha",
+          "IDIOMA": "Idioma"
+        },
+        "PLACEHOLDERS": {
+          "CONFIRME_SENHA": "Confirme a senha",
+          "EMAIL": "E-mail",
+          "NOME": "Nome",
+          "PASSWORD": "Senha"
+        }
+      }
+    },
+    "USERS": {
+      "FORM": {
+        "HINT": {
+          "PASSWORD_6": "A senha deve conter ao menos 6 dígitos"
+        },
+        "LABELS": {
+          "CADASTRO": "Cadastro",
+          "EDIT": "Editar usuário",
+          "FEM": "Feminino",
+          "GENERAL_INFO": "Informações gerais",
+          "LOCALIZACAO": "Localização",
+          "MASC": "Masculino",
+          "NEW": "Novo usuário",
+          "REQUIRED": "Campos obrigatórios",
+          "SENHA_PERMISSAO": "Senha e permissão"
+        },
+        "PLACEHOLDERS": {
+          "BAIRRO": "Bairro",
+          "BIRTHDAY": "Data de nascimento",
+          "CELULAR": "Celular",
+          "CEP": "CEP",
+          "CIDADE": "Cidade",
+          "COMPLEMENTO": "Complemento",
+          "EMAIL": "E-mail",
+          "LOGRADOURO": "Logradouro",
+          "NOME": "Nome",
+          "NUMERO": "Número",
+          "OBS": "Observações",
+          "PASSWORD": "Senha",
+          "PASSWORD_CONFIRMATION": "Confirmar senha",
+          "PERMISSAO": "Permissão",
+          "SEX": "Sexo",
+          "SOBRENOME": "Sobrenome",
+          "TELEFONE": "Telefone",
+          "VIEW_NAME": "Nome de exibição"
+        },
+        "TOOLTIP": {
+          "DELETE": "Excluir usuário"
+        }
+      },
+      "LABELS": {
+        "USERS": "Usuários"
+      },
+      "TABLE": {
+        "AGENTE": "Agente",
+        "ATUALIZADO": "Atualizado",
+        "CREATED": "Criado",
+        "DATA": "Data",
+        "ID": "ID",
+        "PERMISSAO": "Permissão",
+        "USER": "Usuário"
+      },
+      "TOOLTIPS": {
+        "NOVO": "Novo usuário"
+      }
+    }
+  },
+  "NAVIGATION": {
+    "LABELS": {
+      "ADMINISTRATIVO": "Administrativo",
+      "AGENTE": "Agente",
+      "AGENTES": "Agentes",
+      "CLIENTES": "Clientes",
+      "CONCILIACAO": "Conciliação",
+      "CONFIGURACOES": "Configurações",
+      "DASHBOARD": "Dashboard",
+      "EXTRATOS": "Extratos",
+      "HOME": "Home",
+      "MEU_PERFIL": "Meu perfil",
+      "NEWS": "Notícias",
+      "NOVO_SAQUE": "Novo Saque",
+      "ORDENS": "Ordens",
+      "SAIR": "Sair",
+      "SUPORTE": "Suporte",
+      "USERS": "Usuários",
+      "USUARIOS": "Usuários",
+      "POSTS": "Posts"
+    }
+  },
+  "RAPI": {
+    "PIECE": {
+      "AUTH": {
+        "LABELS": {
+          "BACK_TO_LOGIN": "Retornar ao login",
+          "CREATE_ACCOUNT": "Criar conta",
+          "DONT_ACCOUNT": "Não tem uma conta",
+          "DO_LOGIN": "Faça login",
+          "DO_LOGIN_TO_CONTINUE": "Efetue o login para continuar para o dashboard",
+          "FORGOT_PASSWORD": "Esqueci minha senha",
+          "HAVE_ACCOUNT": "Já possui uma conta",
+          "LOGIN": "Login",
+          "LOGING_OUT": "Saindo",
+          "NEW_PASSWORD": "Criar nova senha",
+          "REGISTER": "Registrar",
+          "REMEMBER": "Lembrar-me",
+          "RESTORE_PASSWORD": "Recuperar senha",
+          "SUBSCRIBE": "Inscreva-se",
+          "WELCOME": "Bem-vindo",
+          "WRITE_EMAIL": "Informe seu email para redefinir sua senha"
+        },
+        "PLACEHOLDERS": {
+          "EMAIL": "E-mail",
+          "PASSWORD": "Senha",
+          "PASSWORD_CONFIRMATION": "Confirme a senha",
+          "USER": "Usuário"
+        }
+      },
+      "CITY": {
+        "CITY": "Cidade",
+        "CREATE": "Cadastrar uma nova cidade",
+        "EMPTY": "Não encontramos nenhuma cidade para sua busca",
+        "FORM": {
+          "FOUNDED_CITIES": "Cidades encontradas",
+          "NEW_CITY": "Cadastrar cidade",
+          "NOT_FOUND": "Não encontramos cidades para sua busca",
+          "SEARCH": "Buscar cidade",
+          "SEARCH_BUTTON": "Buscar",
+          "SELECT": "Selecionar"
+        },
+        "SEARCH": "Buscar cidade"
+      }
+    },
+    "W3": {
+      "DELETE_DIALOG": {
+        "CANCEL": "Cancelar",
+        "CONFIRM": "Confirmar",
+        "SUBTITLE": "Deseja excluir o item",
+        "TITLE": "Excluir item"
+      }
+    }
+  }
+}

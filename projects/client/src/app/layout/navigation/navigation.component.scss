@@ -1,0 +1,54 @@
+@import "../../../../../commons/@fuse/scss/fuse";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+mat-toolbar {
+  background: linear-gradient(
+    116.86deg,
+    #0d5f8f 42.32%,
+    #0c878e 79.36%,
+    #00bbc7 113.36%
+  );
+}
+
+.header {
+  background: linear-gradient(
+    116.86deg,
+    #0d5f8f 42.32%,
+    #0c878e 79.36%,
+    #00bbc7 113.36%
+  );
+  height: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+mat-drawer {
+  width: 400px;
+  // @include media-breakpoint("xs") {
+  //   width: 100%;
+  // }
+}
+
+::ng-deep .mat-select-placeholder {
+  color: rgb(185, 185, 185);
+  font-size: 12px;
+}
+
+.list {
+  background-color: white;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  /* width */
+  overflow-y: unset !important;
+  overflow-x: hidden !important;
+}

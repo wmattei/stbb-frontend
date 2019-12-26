@@ -1,0 +1,432 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/theming";
+@import "https://fonts.googleapis.com/css?family=Muli&display=swap";
+@import "~ngx-toastr/toastr.css";
+@include mat-core();
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Muli", sans-serif !important;
+
+  .mat-card {
+    font-family: "Muli", sans-serif !important;
+  }
+
+  .mat-tab-group {
+    font-family: "Muli", sans-serif !important;
+  }
+
+  .mat-toolbar {
+    font-family: "Muli", sans-serif !important;
+  }
+
+  button {
+    font-family: "Muli", sans-serif !important;
+
+    span {
+      vertical-align: top !important;
+    }
+  }
+}
+
+$primary: (
+  50: #e1eff7,
+  100: #b3d6eb,
+  200: #81bbde,
+  300: #4ea0d1,
+  400: #288bc7,
+  500: #0277bd,
+  600: #026fb7,
+  700: #0164ae,
+  800: #015aa6,
+  900: #014798,
+  A100: #c3dbff,
+  A200: #90bcff,
+  A400: #5d9dff,
+  A700: #448dff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$accent: (
+  50: #e7f8f2,
+  100: #c2ecde,
+  200: #9ae0c8,
+  300: #72d4b2,
+  400: #53caa2,
+  500: #35c191,
+  600: #30bb89,
+  700: #28b37e,
+  800: #22ab74,
+  900: #169e62,
+  A100: #d2ffea,
+  A200: #9fffd1,
+  A400: #6cffb9,
+  A700: #52ffad,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
+);
+
+$app-primary: mat-palette($primary);
+$app-accent: mat-palette($accent);
+
+$app-theme: mat-light-theme($app-primary, $app-accent);
+
+@include angular-material-theme($app-theme);
+
+// Variables
+$warn: #fbac05;
+$paragraph: #4d4d4d;
+$paragraph-light: #979797;
+
+.ic-prefix {
+  color: #29b6f6;
+  font-weight: 500;
+  margin-right: 16px;
+}
+
+.tc-primary {
+  color: #29b6f6;
+}
+
+.tc-warn {
+  color: $warn;
+}
+
+.bgc-primary {
+  background-color: #29b6f6 !important;
+}
+
+.tc-accent {
+  color: #57b894;
+}
+
+.bgc-accent {
+  background-color: #57b894;
+}
+
+.tc-white {
+  color: white;
+}
+
+.bgc-white {
+  background-color: white;
+}
+
+.tc-paragraph {
+  color: $paragraph;
+}
+.tc-paragraph-light {
+  color: $paragraph-light;
+}
+.tc-paragraph-warn {
+  color: $warn;
+}
+
+.bgc-paragraph {
+  background-color: $paragraph;
+}
+.bgc-paragraph-light {
+  background-color: $paragraph-light;
+}
+.bgc-paragraph-warn {
+  background-color: $warn;
+}
+
+.rounded-btn {
+  border-radius: 100px !important;
+}
+
+@for $i from 1 through 64 {
+  $size: $i * 2;
+  .font-#{$size} {
+    font-size: #{$size}px !important;
+  }
+}
+
+@for $i from 1 through 64 {
+  $size: $i * 4;
+  .p-#{$size} {
+    padding: #{$size}px !important;
+  }
+  .pt-#{$size} {
+    padding-top: #{$size}px !important;
+  }
+  .pb-#{$size} {
+    padding-bottom: #{$size}px !important;
+  }
+  .pl-#{$size} {
+    padding-left: #{$size}px !important;
+  }
+  .pr-#{$size} {
+    padding-right: #{$size}px !important;
+  }
+  .m-#{$size} {
+    margin: #{$size}px !important;
+  }
+  .mt-#{$size} {
+    margin-top: #{$size}px !important;
+  }
+  .mb-#{$size} {
+    margin-bottom: #{$size}px !important;
+  }
+  .ml-#{$size} {
+    margin-left: #{$size}px !important;
+  }
+  .mr-#{$size} {
+    margin-right: #{$size}px !important;
+  }
+  .pull-#{$size} {
+    margin: -#{$size}px !important;
+  }
+  .pull-t-#{$size} {
+    margin-top: -#{$size}px !important;
+  }
+  .pull-b-#{$size} {
+    margin-bottom: -#{$size}px !important;
+  }
+  .pull-l-#{$size} {
+    margin-left: -#{$size}px !important;
+  }
+  .pull-r-#{$size} {
+    margin-right: -#{$size}px !important;
+  }
+}
+
+@for $i from 1 through 20 {
+  $size: $i * 5;
+  .radius-#{$size} {
+    border-radius: #{$size}px !important;
+  }
+}
+
+@for $i from 1 through 64 {
+  $size: $i * 2;
+
+  .h-#{$size} {
+    height: #{$size}px !important;
+    max-height: #{$size}px !important;
+    min-height: #{$size}px !important;
+  }
+  .w-#{$size} {
+    width: #{$size}px !important;
+    max-width: #{$size}px !important;
+    min-width: #{$size}px !important;
+  }
+}
+
+.rounded {
+  border-radius: 50% !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+//Correção de alinhameno do icone prefix de input
+.mat-form-field-prefix,
+.mat-form-field-suffix {
+  top: 5px !important;
+}
+a {
+  text-decoration: none;
+}
+
+.border {
+  border: #29b6f6 solid 1px !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// Page
+$toolbar-height: 56px !default;
+$footer-height: 49px !default;
+
+$layout-height: $toolbar-height - $footer-height;
+
+.content {
+  .page {
+    position: relative;
+    overflow: auto;
+    min-height: 100vh !important;
+    max-height: 100vh !important;
+
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+  .mat-toolbar + & {
+    .page {
+      min-height: calc(100vh - 64px) !important;
+      max-height: calc(100vh - 64px) !important;
+    }
+  }
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bold-300 {
+  font-weight: 500;
+}
+
+.bold-500 {
+  font-weight: 500;
+}
+
+.bold-600 {
+  font-weight: 600;
+}
+
+.title-18 {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.title-16 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.title-14 {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.heading {
+  font-weight: 600 !important;
+  color: $paragraph !important;
+  font-size: 14px;
+}
+
+.content-14 {
+  font-weight: 300;
+  color: $paragraph;
+  font-size: 14px;
+}
+
+.content-12 {
+  font-weight: 300;
+  color: $paragraph;
+  font-size: 12px;
+}
+
+.content-10 {
+  font-weight: 300;
+  color: $paragraph;
+  font-size: 12px;
+}
+
+.label {
+  font-weight: 300;
+  font-size: 10px;
+  color: $paragraph;
+}
+
+.label-primary {
+  font-size: 10px;
+  font-weight: normal !important;
+  color: #29b6f6;
+}
+
+.label-field {
+  font-size: 12px !important;
+  color: #979797;
+}
+
+.tc-error {
+  color: #f15852;
+}
+
+.scrollable {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(182, 181, 181);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgb(161, 161, 161);
+  }
+}
+
+.divider {
+  border-bottom: rgb(223, 223, 223) solid 0.5px;
+}
+
+.form-dialog {
+  .mat-dialog-title {
+    background-color: #0277bd !important;
+  }
+}
+
+.mat-dialog-container {
+  padding: 0px !important;
+  overflow: hidden !important;
+}
+
+.fix {
+  position: fixed !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+button[disabled] {
+  span {
+    color: rgb(199, 199, 199) !important;
+  }
+  mat-icon {
+    color: rgb(199, 199, 199) !important;
+  }
+  cursor: not-allowed !important;
+}
