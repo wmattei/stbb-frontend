@@ -1,33 +1,34 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthApiService } from '../../store/auth-api.service';
 
 @Component({
-  selector: "app-restore-password",
-  templateUrl: "./restore-password.component.html"
+    selector: 'app-restore-password',
+    templateUrl: './restore-password.component.html',
 })
 export class RestorePasswordComponent implements OnInit {
-  public formGroup: FormGroup = new FormGroup({
-    email: new FormControl("", [Validators.required, Validators.email])
-  });
+    public formGroup: FormGroup = new FormGroup({
+        email: new FormControl('', [Validators.required]),
+    });
 
-  constructor(
-    private authService: AuthApiService,
-    private router: Router
-  ) {}
+    constructor(private authService: AuthApiService, private router: Router) {}
 
-  ngOnInit() {}
+    ngOnInit() {}
 
-  get email() {
-    return this.formGroup.get("email") as FormControl;
-  }
+    get email() {
+        return this.formGroup.get('email') as FormControl;
+    }
 
-  submit() {
-    if (this.formGroup.invalid) return;
+    submit() {
+        if (this.formGroup.invalid) return;
 
-    // this.authService.remind(this.formGroup.value).subscribe(res => {
-    //   this.router.navigate(["/auth/login"]);
-    // });
-  }
+        this.authService
+            .restorePassword(this.formGroup.value)
+            .subscribe(res => {
+                this.router.navigate(['/auth/restore-password/success'], {
+                    queryParams: { email: res.email },
+                });
+            });
+    }
 }

@@ -13,9 +13,10 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         const currentRoute = this.router.url;
+        
         if (!this.authService.isLoggedIn()) {
             this.router.navigate(['/auth/login'], {
-                queryParams: { redirectUrl: currentRoute },
+                queryParams: { redirectUrl: '/portal'+currentRoute },
             });
         }
         return true;

@@ -1,17 +1,31 @@
-import { Routes } from "@angular/router";
-import { AuthComponent } from "./auth.component";
-import { LoginComponent } from "./pages/login/login.component";
-import { RestorePasswordComponent } from "./pages/restore-password/restore-password.component";
-import { LogoutComponent } from "./pages/logout/logout.component";
+import { Routes } from '@angular/router';
+import { AuthComponent } from './auth.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+import { RestorePasswordSuccessComponent } from './pages/restore-password-success/restore-password-success.component';
+import { RestorePasswordComponent } from './pages/restore-password/restore-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 export const authRoutes: Routes = [
-  {
-    path: "",
-    component: AuthComponent,
-    children: [
-      { path: "login", component: LoginComponent },
-      { path: "logout", component: LogoutComponent },
-      { path: "restore-password", component: RestorePasswordComponent }
-    ]
-  }
+    {
+        path: '',
+        component: AuthComponent,
+        children: [
+            { path: 'login', component: LoginComponent },
+            { path: 'logout', component: LogoutComponent },
+            {
+                path: 'restore-password',
+                pathMatch: 'full',
+                component: RestorePasswordComponent,
+            },
+            {
+                path: 'restore-password/success',
+                component: RestorePasswordSuccessComponent,
+            },
+            {
+                path: 'reset-password/:token',
+                component: ResetPasswordComponent,
+            },
+        ],
+    },
 ];

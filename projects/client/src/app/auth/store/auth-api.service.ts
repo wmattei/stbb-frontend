@@ -28,9 +28,21 @@ export class AuthApiService {
         localStorage.removeItem('expiresIn');
     }
 
-    restorePassword() {}
+    restorePassword(data) {
+        return this.http.post(`${this.getBaseUrl()}/restore`, data).pipe(
+            map((res: any) => {
+                return res.data;
+            })
+        );
+    }
 
-    resetPassword() {}
+    resetPassword(data) {
+        return this.http.post(`${this.getBaseUrl()}/reset`, data).pipe(
+            map((res: any) => {
+                return res.data;
+            })
+        );
+    }
 
     findCurrentUser(params): Observable<User> {
         return this.http.get(`${this.getBaseUrl()}/whoami`, { params }).pipe(
@@ -48,7 +60,7 @@ export class AuthApiService {
     isLoggedIn(): boolean {
         const token = localStorage.getItem('accessToken');
         const expireDate = +localStorage.getItem('expiresIn');
-            
-        return token && expireDate >= (new Date().getTime() );
+
+        return token && expireDate >= new Date().getTime();
     }
 }
