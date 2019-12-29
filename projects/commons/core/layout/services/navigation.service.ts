@@ -5,13 +5,16 @@ import {
   NavigationOptions,
   ToolbarOptionsButton
 } from "../models/navigation";
-import { initOptions } from "projects/admin/src/app/layout/navigation/navigation-init-options";
 
 @Injectable()
 export class NavigationService {
   private navigationOptions: BehaviorSubject<
     NavigationOptions
-  > = new BehaviorSubject(initOptions);
+  > = new BehaviorSubject({
+      toolbar: {},
+      sidenav: {},
+      footer: {}
+  });
   private loading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   private drawerEmitter: EventEmitter<any> = new EventEmitter();
@@ -41,15 +44,9 @@ export class NavigationService {
     return this.navigationOptions.subscribe(res => console.log(res));
   }
 
-  togleLeftButton(option: ToolbarOptionsButton) {
-    let newvalue = this.navigationOptions.value;
-    newvalue.toolbar.leftButton = option;
-    this.navigationOptions.next(newvalue);
-  }
-
-  togleRightButton(option: ToolbarOptionsButton) {
-    let newvalue = this.navigationOptions.value;
-    newvalue.toolbar.rightButton = option;
+  togleShowMenu(showMenu: boolean) {
+    const newvalue = this.navigationOptions.value;
+    newvalue.toolbar.showMenu = showMenu;
     this.navigationOptions.next(newvalue);
   }
 

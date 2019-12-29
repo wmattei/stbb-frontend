@@ -18,6 +18,6 @@
       "@common*": ["projects/common/src/app*"]
     },
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"]
+    "lib": ["esnext", "dom"]
   }
 }

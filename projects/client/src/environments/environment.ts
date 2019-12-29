@@ -1,15 +1,13 @@
+import {version} from '../../../../package.json'
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  URL_API: "https://services.boilerplate.dploy.com.br/api/v1",
+  URL_API: "http://localhost:3000/v1/api",
   URL_APP: window.location.host,
+  version,
   production: false,
-  version: "v0.0.0",
-  SOCKET_KEY: "",
-  SOCKET_CLUSTER: "",
-  URL_SOCKET: ""
 };
 /*
  * For easier debugging in development mode, you can import the following file

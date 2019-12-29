@@ -10,6 +10,7 @@ export interface FooterOptions {
 
 export interface ToolbarOptions {
   showToolbar?: boolean;
+  showMenu?: boolean;
   backgroundColor?: string;
   color?: string;
   leftButton?: ToolbarOptionsButton;

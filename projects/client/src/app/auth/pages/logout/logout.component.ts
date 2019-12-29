@@ -1,20 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthService } from "../../store/services/auth.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthApiService } from '../../store/auth-api.service';
+import { Store } from '@ngrx/store';
+import { AuthState } from '../../store/auth.reducer';
+import { setCurrentUser } from '../../store/auth.actions';
 
 @Component({
-  selector: "app-logout",
-  template: `
-    {{ "RAPI.PIECE.AUTH.LABELS.LOGING_OUT" | translate }}...
-  `,
-  styles: []
+    selector: 'app-logout',
+    template: `
+        Loging out...
+    `,
+    styles: [],
 })
 export class LogoutComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+    constructor(
+        private authService: AuthApiService,
+        private router: Router,
+        private store: Store<AuthState>
+    ) {}
 
-  ngOnInit() {
-    this.authService.logout().subscribe(res => {
-      this.router.navigate([""]);
-    });
-  }
+    ngOnInit() {
+        this.authService.logout();
+        this.store.dispatch(setCurrentUser({data: null}))
+        this.router.navigate(['/']);
+    }
 }

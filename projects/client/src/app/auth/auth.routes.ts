@@ -11,7 +11,7 @@ export const authRoutes: Routes = [
     children: [
       { path: "login", component: LoginComponent },
       { path: "logout", component: LogoutComponent },
-      { path: "recuperar-senha", component: RestorePasswordComponent }
+      { path: "restore-password", component: RestorePasswordComponent }
     ]
   }
 ];

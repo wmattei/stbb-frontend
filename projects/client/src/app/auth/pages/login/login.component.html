@@ -1,57 +1,54 @@
 <div fxLayoutAlign="center stretch" fxLayout="column">
-  <span align="center" class="bold-600">{{
-    "RAPI.PIECE.AUTH.LABELS.LOGIN" | translate
-  }}</span>
-  <form
-    [formGroup]="formGroup"
-    class="mt-20"
-    fxLayoutAlign="center center"
-    (ngSubmit)="login()"
-  >
-    <div fxLayout="column" fxFlex fxFlex.lg="50">
-      <mat-form-field class="rounded-field" appearance="outline">
-        <i class="tc-primary-dark material-icons-outlined" matPrefix>email</i>
-        <input
-          matInput
-          [placeholder]="'RAPI.PIECE.AUTH.PLACEHOLDERS.EMAIL' | translate"
-          [formControl]="email"
-        />
-        <mat-error *ngIf="email.getError('required')">{{
-          "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
-        }}</mat-error>
-        <mat-error *ngIf="email.getError('email')">{{
-          "COMMONS.FORM.VALIDATORS.EMAIL" | translate
-        }}</mat-error>
-      </mat-form-field>
+    <span align="center" class="bold-600">Login</span>
+    <form
+        [formGroup]="formGroup"
+        class="mt-20"
+        fxLayoutAlign="center center"
+        (ngSubmit)="login()"
+    >
+        <div fxLayout="column" fxFlex fxFlex.lg="50">
+            <mat-form-field class="rounded-field" appearance="outline">
+                <i class="tc-primary-dark material-icons-outlined" matPrefix
+                    >person</i
+                >
+                <input matInput placeholder="Email o cédula" [formControl]="email" />
+                <mat-error *ngIf="email.getError('required')"
+                    >Obligatório</mat-error
+                >
+            </mat-form-field>
 
-      <mat-form-field class="rounded-field" appearance="outline">
-        <i class="tc-primary-dark material-icons-outlined" matPrefix>lock</i>
-        <input
-          #pass
-          matInput
-          [placeholder]="'RAPI.PIECE.AUTH.PLACEHOLDERS.PASSWORD' | translate"
-          type="password"
-          [formControl]="password"
-        />
-        <i
-          class="tc-primary-dark material-icons-outlined"
-          (click)="pass.type = pass.type == 'text' ? 'password' : 'text'"
-          matSuffix
-          >remove_red_eye</i
-        >
-        <mat-error *ngIf="password.getError('required')">{{
-          "COMMONS.FORM.VALIDATORS.REQUIRED" | translate
-        }}</mat-error>
-      </mat-form-field>
+            <mat-form-field class="rounded-field" appearance="outline">
+                <i class="tc-primary-dark material-icons-outlined" matPrefix
+                    >lock</i
+                >
+                <input
+                    #pass
+                    matInput
+                    placeholder="Password"
+                    type="password"
+                    [formControl]="password"
+                />
+                <i
+                    class="tc-primary-dark material-icons-outlined"
+                    (click)="
+                        pass.type = pass.type == 'text' ? 'password' : 'text'
+                    "
+                    matSuffix
+                    >remove_red_eye</i
+                >
+                <mat-error *ngIf="password.getError('required')"
+                    >Obligatório</mat-error
+                >
+            </mat-form-field>
 
-      <div fxLayout="row" fxLayoutAlign="center center">
-        <a class="tc-primary font-12" routerLink="/auth/recuperar-senha">{{
-          "RAPI.PIECE.AUTH.LABELS.FORGOT_PASSWORD" | translate
-        }}</a>
-      </div>
-      <button mat-flat-button color="primary" class="mt-32 rounded-btn">
-        <b class="tc-white">{{ "RAPI.PIECE.AUTH.LABELS.LOGIN" | translate }}</b>
-      </button>
-    </div>
-  </form>
+            <div fxLayout="row" fxLayoutAlign="center center">
+                <a class="tc-primary font-12" routerLink="/auth/restore-password"
+                    >Recuperar contraseña</a
+                >
+            </div>
+            <button mat-flat-button color="primary" class="mt-32 rounded-btn">
+                <b class="tc-white">LOGIN</b>
+            </button>
+        </div>
+    </form>
 </div>
