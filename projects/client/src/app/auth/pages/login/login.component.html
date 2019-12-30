@@ -11,7 +11,11 @@
                 <i class="tc-primary-dark material-icons-outlined" matPrefix
                     >person</i
                 >
-                <input matInput placeholder="Email o cédula" [formControl]="email" />
+                <input
+                    matInput
+                    placeholder="Email o cédula"
+                    [formControl]="email"
+                />
                 <mat-error *ngIf="email.getError('required')"
                     >Obligatório</mat-error
                 >
@@ -42,12 +46,26 @@
             </mat-form-field>
 
             <div fxLayout="row" fxLayoutAlign="center center">
-                <a class="tc-primary font-12" routerLink="/auth/restore-password"
+                <a
+                    class="tc-primary font-12"
+                    routerLink="/auth/restore-password"
                     >Me olvide mi contraseña</a
                 >
             </div>
             <button mat-flat-button color="primary" class="mt-32 rounded-btn">
                 <b class="tc-white">LOGIN</b>
+            </button>
+            <span align="center" class="mt-8 tc-paragraph"
+                >No eres alumno?</span
+            >
+            <button
+                mat-stroked-button
+                color="primary"
+                class="mt-12 rounded-btn"
+                type="button"
+                routerLink="/auth/start-register"
+            >
+                <b>REALIZAR MATRÍCULA</b>
             </button>
         </div>
     </form>

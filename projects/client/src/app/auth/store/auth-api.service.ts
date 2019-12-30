@@ -44,6 +44,17 @@ export class AuthApiService {
         );
     }
 
+    startRegister(data) {
+        return this.http.post(`${this.getBaseUrl()}/start-register`, data).pipe(
+            map((res: any) => {
+                return res.data;
+            }),
+            tap((res: any) => {
+                this._setStorageData(res);
+            }),
+        );
+    }
+
     findCurrentUser(params): Observable<User> {
         return this.http.get(`${this.getBaseUrl()}/whoami`, { params }).pipe(
             map((res: any) => {

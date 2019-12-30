@@ -11,6 +11,7 @@ import { AuthStoreModule } from './store/auth-store.module';
 import { AuthApiService } from './store/auth-api.service';
 import { RestorePasswordSuccessComponent } from './pages/restore-password-success/restore-password-success.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { StartRegisterComponent } from './pages/start-register/start-register.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
         LogoutComponent,
         RestorePasswordSuccessComponent,
         ResetPasswordComponent,
+        StartRegisterComponent,
     ],
     imports: [
         CommonModule,
