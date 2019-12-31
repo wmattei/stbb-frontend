@@ -41,5 +41,6 @@ export class User {
     dateOfEnd?: Date;
     sex?: SexEnum;
     observation?: string;
+    avatar: string;
     // subjects: Subject[]
 }

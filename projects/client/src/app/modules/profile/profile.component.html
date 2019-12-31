@@ -1,125 +1,37 @@
 <div
-    fxLayout="column"
-    class=" header"
-    fxLayoutAlign="center center"
-    fxFlexAlign="center"
+    class="p-20"
+    fxLayoutAlign="center stretch"
+    fxLayoutGap="20px"
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayout.sm="column"
 >
-    <div
-        fxLayout="row"
-        class="mt-8 mb-8"
-        fxFlexFill
-        fxLayoutAlign="start center"
-    >
-        <button mat-icon-button (click)="openDrawer()">
-            <mat-icon class="tc-white">menu</mat-icon>
-        </button>
-    </div>
-    <div fxLayout="row" class="m-40" fxLayoutAlign="center center">
-        <div>
-            <!-- <piece-profile-avatar
-        [allowChange]="true"
-        [user]="user$ | async"
-      ></piece-profile-avatar> -->
+    <mat-card fxFlex>
+        <div fxLayoutAlign="center center" class="m-8" fxLayoutGap="20px">
+            <img
+                class="rounded"
+                (click)="openPhoto()"
+                width="150"
+                height="150"
+                [src]="user?.avatar || 'assets/images/user_default.svg'"
+            />
+            <input
+                type="file"
+                hidden
+                #foto
+                capture
+                (change)="openCropper($event)"
+                accept="image/*"
+            />
+            <button
+                mat-stroked-button
+                (click)="foto.click(); foto.value = null"
+            >
+                <b>Cambiar foto</b>
+            </button>
         </div>
-        <div fxLayout="column" class="ml-8">
-            <b class="tc-white font-14 uppercase mr-8">{{
-                (user$ | async)?.name || 'Loading' + '...'
-            }}</b>
-            <span class="tc-white font-12">{{ (user$ | async)?.email }}</span>
-        </div>
+    </mat-card>
+    <div fxFlex>
+        Content
     </div>
-</div>
-<div class="bgc-white">
-    <div fxLayout="column" fxFlex>
-        <div class="p-24">
-            <div
-                fxLayout="row"
-                class="mt-8 mb-8"
-                fxLayoutAlign="space-between center"
-            ></div>
-            <div class="mt-16">
-                <form novalidate [formGroup]="form" (submit)="save()" fxFlex>
-                    <div fxLayout="column" fxLayout.lg="row">
-                        <mat-form-field appearance="outline" fxFlex>
-                            <i
-                                class="material-icons-outlined tc-paragraph-light"
-                                matPrefix
-                                >person</i
-                            >
-                            <input
-                                matInput
-                                required
-                                placeholder="Nombre""
-                                formControlName="first_name"
-                            />
-                            <mat-error>Obligatório</mat-error>
-                        </mat-form-field>
-                    </div>
-
-                    <div fxLayout="column" fxLayout.lg="row">
-                        <mat-form-field appearance="outline" fxFlex>
-                            <i
-                                class="material-icons-outlined tc-paragraph-light"
-                                matPrefix
-                                >email</i
-                            >
-                            <input
-                                matInput
-                                required
-                                placeholder="E-mail"
-                                formControlName="email"
-                            />
-                            <mat-error>Obligatório</mat-error>
-                            <mat-error
-                                *ngIf="!form.get('email').hasError('required')"
-                                >Formato incorrecto</mat-error
-                            >
-                        </mat-form-field>
-                    </div>
-                    <span>Cambiar contraseña</span>
-
-                    <div fxLayout="column" fxLayout.lg="row">
-                        <mat-form-field appearance="outline" fxFlex>
-                            <i
-                                class="material-icons-outlined tc-paragraph-light"
-                                matPrefix
-                                >lock_open</i
-                            >
-                            <input
-                                matInput
-                                required
-                                placeholder="Contraseña"
-                                type="password"
-                                formControlName="password"
-                            />
-                            <mat-error>Obligatório</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div fxLayout="column" fxLayout.lg="row">
-                        <mat-form-field appearance="outline" fxFlex>
-                            <i
-                                class="material-icons-outlined tc-paragraph-light"
-                                matPrefix
-                                >lock_open</i
-                            >
-                            <input
-                                matInput
-                                required
-                                type="password"
-                                placeholder="Confirmación de contraseña"
-                                formControlName="password_confirmation"
-                            />
-                            <mat-error>Obligatório</mat-error>
-                        </mat-form-field>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="p-32">
-    <button (click)="save()" mat-flat-button color="accent" fxFlex>
-        <b class="tc-white">Salvar</b>
-    </button>
 </div>

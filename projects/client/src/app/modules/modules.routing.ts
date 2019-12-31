@@ -9,7 +9,7 @@ export const routes: Routes = [
     component: ModulesComponent,
     children: [
       {
-        path: "meu-perfil",
+        path: "profile",
         component: ProfileComponent
       },
     ]
