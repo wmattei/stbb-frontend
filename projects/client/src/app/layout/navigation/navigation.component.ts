@@ -1,10 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    matExpansionAnimations,
-    MatExpansionPanelState,
-    MatSidenav,
-} from '@angular/material';
+import { matExpansionAnimations, MatExpansionPanelState } from '@angular/material/expansion';
+import { MatSidenav } from '@angular/material/sidenav';
 import { environment } from '@env/environment';
 import { Store } from '@ngrx/store';
 import {

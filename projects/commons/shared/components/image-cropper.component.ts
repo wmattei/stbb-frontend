@@ -89,13 +89,10 @@ export class ImageCropperComponent implements OnInit {
             }
         );
         this.uploadService.upload(data).subscribe(res => {
-            // this.dialogRef.close({
-            //     croppData,
-            //     originalFile: this.event.target.files[0],
-            //     originalImage: this.image,
-            //     croppedImage: this.cropper.cropper.getCroppedCanvas()
-            // })
-            console.log(res);
+            this.dialogRef.close({
+                image: res,
+                croppedImage: this.cropper.cropper.getCroppedCanvas()
+            })
         });
     }
 }

@@ -1,6 +1,6 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { GestureConfig } from '@angular/material';
+import { GestureConfig } from '@angular/material/core';
 import {
     BrowserModule,
     HAMMER_GESTURE_CONFIG,

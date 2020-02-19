@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { ImageViewerComponent } from '../../../../../commons/shared/components/image-viewer.component';
 import { User } from '../../auth/store/auth.model';
@@ -15,7 +15,21 @@ import { ImageCropperComponent } from '../../../../../commons/shared/components/
 })
 export class ProfileComponent implements OnInit {
     public form = new FormGroup({
-        avatar: new FormControl('', Validators.required),
+        image: new FormControl(''),
+        avatar: new FormControl(''),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        password: new FormControl(''),
+        passwordConfirmation: new FormControl(''),
+        name: new FormControl('', Validators.required),
+        document: new FormControl('', Validators.required),
+        countryCode: new FormControl(''),
+        fathersName: new FormControl(''),
+        mothersName: new FormControl(''),
+        birthdate: new FormControl(''),
+        scholarity: new FormControl(''),
+        placeOfBirth: new FormControl(''),
+        gender: new FormControl(''),
+        observation: new FormControl(''),
     });
 
     user: User;
@@ -28,6 +42,7 @@ export class ProfileComponent implements OnInit {
     ngOnInit() {
         this.store.select(getCurrentUser).subscribe(res => {
             this.user = res;
+            if (res) this.form.patchValue(res);
         });
     }
 
@@ -49,8 +64,9 @@ export class ProfileComponent implements OnInit {
             .afterClosed()
             .subscribe(res => {
                 event.target.value = null;
-                console.log(res)
-                this.user.avatar = res.croppedImage.toDataURL('image/jpg')
+                this.user.avatar = res.croppedImage.toDataURL('image/jpg');
+                this.form.get('image').setValue(res.image.id);
+                this.form.get('avatar').setValue(res.image.absoluteCroppedPath);
             });
     }
 }

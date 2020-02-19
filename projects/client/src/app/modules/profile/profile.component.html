@@ -31,7 +31,116 @@
             </button>
         </div>
     </mat-card>
-    <div fxFlex>
-        Content
-    </div>
+    <mat-card fxFlex>
+        <form [formGroup]="form">
+            <div fxLayout="column" class="p-20">
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Email"
+                        required
+                        formControlName="email"
+                    />
+                    <mat-error>Obligatório</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Contraseña"
+                        formControlName="password"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Confirmación de Contraseña"
+                        formControlName="passwordConfirmation"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        required
+                        placeholder="Nombre completo"
+                        formControlName="name"
+                    />
+                    <mat-error>Obligatório</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        required
+                        placeholder="Documento"
+                        formControlName="document"
+                    />
+                    <mat-error>Obligatório</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="País"
+                        formControlName="countryCode"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Nombre del padre"
+                        formControlName="fathersName"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Nombre de la madre"
+                        formControlName="mothersName"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Fecha de nacimiento"
+                        formControlName="birthdate"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Escolaridad"
+                        formControlName="scholarity"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Local de nacimiento"
+                        formControlName="placeOfBirth"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Genero"
+                        formControlName="gender"
+                    />
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex>
+                    <input
+                        matInput
+                        placeholder="Observación"
+                        formControlName="observation"
+                    />
+                </mat-form-field>
+                <div fxLayout="row" fxLayoutGap="10px">
+                    <button mat-flat-button color="warn" fxFlex>
+                        <b>CANCELAR</b>
+                    </button>
+                    <button mat-flat-button color="primary" fxFlex>
+                        <mat-icon>save</mat-icon>
+                        <b>GUARDAR</b>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </mat-card>
 </div>

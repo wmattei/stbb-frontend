@@ -7,14 +7,9 @@ import { map } from 'rxjs/operators';
 export class UploadService {
     constructor(private http: HttpClient) {}
 
-    upload(data) {
+    upload(data: FormData) {
         return this.http
-            .post(`${environment.URL_API}/file/upload`, data, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            })
-            .pipe(map((res: any) => res.data));
+            .post<any>(`${environment.URL_API}/file/upload`, data)
     }
 
     buildFormData(file, data) {
