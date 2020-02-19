@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { CropperComponent } from 'angular-cropperjs';
+import { UploadService } from '../services/upload.service';
 
 @Component({
     selector: 'image-cropper',
@@ -61,7 +62,8 @@ export class ImageCropperComponent implements OnInit {
 
     constructor(
         @Inject(MAT_DIALOG_DATA) public event,
-        private dialogRef: MatDialogRef<CropperComponent>
+        private dialogRef: MatDialogRef<CropperComponent>,
+        private uploadService: UploadService
     ) {}
 
     ngOnInit() {
@@ -74,11 +76,26 @@ export class ImageCropperComponent implements OnInit {
     }
 
     save() {
-        this.dialogRef.close({
-            croppData: this.cropper.cropper.getData(true),
-            originalFile: this.event.target.files[0],
-            originalImage: this.image,
-            croppedImage: this.cropper.cropper.getCroppedCanvas()
-        })
+        const croppData = this.cropper.cropper.getData(true);
+        const data = this.uploadService.buildFormData(
+            this.event.target.files[0],
+            {
+                gallery: 'avatar',
+                x: croppData.x,
+                y: croppData.y,
+                width: croppData.width,
+                height: croppData.height,
+                rotate: croppData.rotate,
+            }
+        );
+        this.uploadService.upload(data).subscribe(res => {
+            // this.dialogRef.close({
+            //     croppData,
+            //     originalFile: this.event.target.files[0],
+            //     originalImage: this.image,
+            //     croppedImage: this.cropper.cropper.getCroppedCanvas()
+            // })
+            console.log(res);
+        });
     }
 }

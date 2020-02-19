@@ -48,7 +48,9 @@
               "projects/client/src/manifest.webmanifest",
               "projects/client/src/manifest.webmanifest"
             ],
-            "styles": ["projects/client/src/styles.scss"],
+            "styles": [
+              "projects/client/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -107,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9afa6fa7-6e6a-430c-baa7-f422f842897b"
   }
 }

@@ -23,6 +23,7 @@ import { NavigationService } from '../core/layout/services/navigation.service';
 import { ImageViewerComponent } from './components/image-viewer.component';
 import { ImageCropperComponent } from './components/image-cropper.component';
 import { AngularCropperjsModule } from 'angular-cropperjs';
+import { UploadService } from './services/upload.service';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,7 @@ import { AngularCropperjsModule } from 'angular-cropperjs';
         MatInputModule,
         MatCardModule,
         MatDialogModule,
-        AngularCropperjsModule
+        AngularCropperjsModule,
     ],
     exports: [
         CommonModule,
@@ -80,9 +81,13 @@ import { AngularCropperjsModule } from 'angular-cropperjs';
         // Components
         NavigationPwaComponent,
         ImageViewerComponent,
-        ImageCropperComponent
+        ImageCropperComponent,
     ],
     entryComponents: [ImageViewerComponent, ImageCropperComponent],
-    providers: [NavigationService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
+    providers: [
+        NavigationService,
+        { provide: LOCALE_ID, useValue: 'pt-BR' },
+        UploadService,
+    ],
 })
 export class SharedModule {}
